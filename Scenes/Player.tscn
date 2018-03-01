@@ -1,0 +1,211 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_U1.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_U2.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_U3.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_U4.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Player/Walk/PlayerR1.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Player/Walk/PlayerR2.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Player/Walk/PlayerR3.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Player/Walk/PlayerR4.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_D1.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_D2.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_D3.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_D4.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_R1.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_R2.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_R3.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_R4.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_L1.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_L2.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_L3.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Player/Idle/PlayerI_L4.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Player/Walk/PlayerD1.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Player/Walk/PlayerD2.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Player/Walk/PlayerD3.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Player/Walk/PlayerD4.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Player/Walk/PlayerL1.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Player/Walk/PlayerL2.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Player/Walk/PlayerL3.png" type="Texture" id=28]
+[ext_resource path="res://Textures/Player/Walk/PlayerL4.png" type="Texture" id=29]
+[ext_resource path="res://Textures/Player/Walk/PlayerU0.png" type="Texture" id=30]
+[ext_resource path="res://Textures/Player/Walk/PlayerU3.png" type="Texture" id=31]
+[ext_resource path="res://Textures/Player/Walk/PlayerU1.png" type="Texture" id=32]
+[ext_resource path="res://Textures/Player/PHealthBar.png" type="Texture" id=33]
+[ext_resource path="res://Textures/Player/P_Health.png" type="Texture" id=34]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+render_priority = 0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idleUp",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walkRight",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "idleDown",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "idleRight",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "idleLeft",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "walkDown",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "walkLeft",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "walkUp",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4.00247, 9.99298 )
+
+[node name="Player" type="KinematicBody2D" index="0" groups=[
+"Entities",
+]]
+
+material = SubResource( 1 )
+scale = Vector2( 2.5, 2.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+SPEED = 100
+
+[node name="Origin" type="Node2D" parent="." index="0"]
+
+position = Vector2( 4, 10 )
+scale = Vector2( 0.025, 0.025 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MainCamera" type="Camera2D" parent="." index="1"]
+
+position = Vector2( 2, 5 )
+anchor_mode = 1
+rotating = true
+current = true
+zoom = Vector2( 1.25, 1.25 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 20.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.25
+drag_margin_top = 0.25
+drag_margin_right = 0.25
+drag_margin_bottom = 0.25
+editor_draw_screen = false
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+use_parent_material = true
+position = Vector2( -5, -11.2 )
+frames = SubResource( 2 )
+animation = "walkDown"
+centered = false
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Health" type="Node2D" parent="." index="4"]
+
+position = Vector2( -2, -4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Health" index="0"]
+
+use_parent_material = true
+position = Vector2( -9, -13 )
+texture = ExtResource( 33 )
+centered = false
+_sections_unfolded = [ "Material", "Offset", "Transform" ]
+
+[node name="TextureProgress" type="TextureProgress" parent="Health" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -8.0
+margin_top = -12.0
+margin_right = 12.0
+margin_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 50.0
+exp_edit = false
+rounded = false
+texture_under = null
+texture_over = null
+texture_progress = ExtResource( 34 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = false
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
+
+[node name="Tween" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+
+

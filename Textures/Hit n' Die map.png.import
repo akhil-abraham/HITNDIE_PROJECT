@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Hit n' Die map.png-ad4125f1e0713b6031b6529cbdf786cd.stex"
+
+[deps]
+
+source_file="res://Textures/Hit n' Die map.png"
+source_md5="c71be6f78c9a97de85584d5ead03c614"
+
+dest_files=[ "res://.import/Hit n' Die map.png-ad4125f1e0713b6031b6529cbdf786cd.stex" ]
+dest_md5="c9b8611f3305a74258e21eafc0ab34ac"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
