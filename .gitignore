@@ -3,4 +3,8 @@ engine.cfg
 icon.png
 .import/
 default_env.tres
+<<<<<<< HEAD
 icon.png.import
+=======
+icon.png.import
+>>>>>>> origin/master
